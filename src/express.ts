@@ -38,7 +38,9 @@ app.use((req, res, next) => {
             clips: [],
             sessionId: req.sessionID,
             votes: 0,
-            expiresAt: 0
+            expiresAt: 0,
+            skips: 5,
+            newSkip: 0,
         });
     }
     next();
@@ -101,8 +103,17 @@ app.get("/api", (req, res) => {
     res.json({ message: "Hello from API!" + JSON.stringify(getSessionData<VotingContext>(req.session, "votingContext")) });
 });
 app.post("/api/new", (req, res) => {
-    let clips = requestNewVote(req);
-    res.json({ message: "Your clips: " + JSON.stringify(clips) });
+    let context = getVotingContext(req.session);
+    if(context.skips ==0){
+        req.flash("e", "Nepřeskakuješ nějak často?!! Tu a tam halsuj a přeskakovat budeš zase moct.");
+        res.redirect("/");
+        return;
+    }
+    context.skips--;
+    setVotingContext(req.session, context);
+    requestNewVote(req);
+    req.flash("m", "Tady máš něco nového, ale nepřeskakuj moc často >:(");
+    res.redirect("/");
 });
 app.post("/api/admin", (req, res) => {
    if(req.body["password"] == secretConfig.adminPass){

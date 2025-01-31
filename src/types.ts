@@ -2,7 +2,9 @@ export type VotingContext = {
     sessionId : string,
     clips : Clip[],
     votes : number,
-    expiresAt : number
+    expiresAt : number,
+    skips : number,
+    newSkip : number
 }
 
 export type Data = {

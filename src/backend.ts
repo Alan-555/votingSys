@@ -8,6 +8,10 @@ export function requestNewVote(req : Request) : [Clip,Clip] {
     let clips = getTwoClips();
     context.clips = clips;
     context.expiresAt = Date.now() + appConfig.voteTime;
+    if(context.newSkip++==appConfig.newSkipRewardAfterVotes){
+        context.skips+=3;
+        context.newSkip = 0;
+    }
     setVotingContext(req.session, context);
     return clips;
 }

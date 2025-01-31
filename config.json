@@ -2,5 +2,6 @@
     "initHP": 5,
     "maxHP": 7,
     "voteTime": 90000,
-    "voteEnd" : 10
+    "voteEnd" : 10,
+    "newSkipRewardAfterVotes" : 10
 }

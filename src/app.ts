@@ -24,7 +24,6 @@ rl.on("line", (input) => {
     handleCommand(input);
 });
 
-initDB();
 
 
 app.listen(3000, () => {
@@ -40,6 +39,9 @@ function handleCommand(command: string) {
         case "voteEnd":
             VoteOpen = false;
         break;
+        case "initDB":
+            initDB();
+            break;
         default:
             console.log("❌ Unknown command.");
     }
