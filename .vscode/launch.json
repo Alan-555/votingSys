@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Run TypeScript",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/app.ts", 
+        "preLaunchTask": "tsc: build - tsconfig.json",
+        "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+        "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen"
+      },
+      {
+        "name": "Debug TypeScript",
+        "type": "node",
+        "request": "attach",
+        "processId": "${command:PickProcess}",
+        "restart": true,
+        "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+      }
+    ]
+  }
+  
