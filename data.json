@@ -1,10 +1,18 @@
 {
   "test1": {
-    "hp": 11,
-    "path": "/files/test1"
+    "hp": 10,
+    "path": "../public/files/test1"
   },
   "test2": {
+    "hp": 11,
+    "path": "../public/files/test2"
+  },
+  "test3": {
     "hp": 10,
-    "path": "/files/test2"
+    "path": "../public/files/test3"
+  },
+  "test4": {
+    "hp": 9,
+    "path": "../public/files/test4"
   }
 }

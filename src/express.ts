@@ -4,6 +4,9 @@ import { fileURLToPath } from "url";
 import session, { Session } from "express-session";
 import secretConfig from "./../secret.json" with { type: "json" };
 import { VotingContext } from "./types.js";
+import { requestNewVote, vote } from "./backend.js";
+import { changeClipHP } from "./dataBase.js";
+import { inspect } from "util";
 
 
 const app = express();
@@ -44,6 +47,21 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from API!" + JSON.stringify(getSessionData<VotingContext>(req.session, "votingContext")) });
 });
+app.post("/api/new", (req, res) => {
+    let clips = requestNewVote(req);
+    res.json({ message: "Your clips: " + JSON.stringify(clips) });
+});
+app.post("/api/vote", (req, res) => {
+    try{
+        let newContext = vote(getVotingContext(req.session), 0);
+        setVotingContext(req.session, newContext);
+        res.json({ message: "Voted succesfully"}).status(200);
+    }catch(e){
+        console.log(e);
+        res.json({ message: "Error voting! "+e}).status(500);
+    }
+    
+})
 
 
 app.get("/destroy-session", (req, res) => {
