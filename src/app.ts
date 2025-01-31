@@ -12,6 +12,9 @@ export function endVote(){
     VoteOpen = false;
     VoteDone = true;
 }
+export function startVote(){
+    VoteOpen = true;
+}
 
 const rl = readline.createInterface({
     input: process.stdin,

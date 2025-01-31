@@ -1,4 +1,4 @@
-import express from "express";
+import express,{Request,Response} from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import session, { Session } from "express-session";
@@ -9,7 +9,7 @@ import { changeClipHP, getRemaining } from "./dataBase.js";
 import { inspect } from "util";
 import flash from "express-flash";
 import { readDB } from "./jsonHelper.js";
-import appConfig, { endVote, VoteDone, VoteOpen } from "./app.js";
+import appConfig, { endVote, startVote, VoteDone, VoteOpen } from "./app.js";
 
 
 const app = express();
@@ -60,7 +60,8 @@ app.get("/", (req, res) => {
             messages : req.flash("m"),
             "title" : VoteDone ? "hlasování je ukonce" : "Zachvíli začneme hlasování!",
             "message" : VoteDone ? "Bylo vybráno nejlepších "+appConfig.voteEnd : "(snad to bude fungovat lol)",
-            errorMessages : req.flash("e")
+            errorMessages : req.flash("e"),
+            isAdmin : getSessionData(req.session, "isAdmin")
         });
         return;
     }
@@ -72,7 +73,7 @@ app.get("/", (req, res) => {
     }
     else if (voteStatus == 2) {
         requestNewVote(req);
-        req.flash("e", "The voting period has ended!");
+        req.flash("e", "Čas vypršel!");
         res.redirect("/");
         return;
     }
@@ -83,11 +84,17 @@ app.get("/", (req, res) => {
         remainingClips: getRemaining(),
         time: ((clips.expiresAt - Date.now()) / 1000).toPrecision(2),
         messages: m,
-        errorMessages : req.flash("e")
+        errorMessages : req.flash("e"),
+        isAdmin : getSessionData(req.session, "isAdmin")
     });
 
 });
-
+app.get("/login", (req, res) => {
+    res.render("login",{
+        messages : req.flash("m"),
+        errorMessages : req.flash("e")
+    });
+});
 
 // Define a simple API route
 app.get("/api", (req, res) => {
@@ -98,10 +105,37 @@ app.post("/api/new", (req, res) => {
     res.json({ message: "Your clips: " + JSON.stringify(clips) });
 });
 app.post("/api/admin", (req, res) => {
-   if(req.body["password"] == secretConfig.adminPassword){
+   if(req.body["password"] == secretConfig.adminPass){
+      setSessionData(req.session, "isAdmin",true);
+      req.flash("m", "You are now admin!");
+      res.redirect("/");
 
    } 
+   else{
+      req.flash("e", "Wrong password!");
+      res.redirect("/login");
+   }
 });
+adminGet("/list", (req, res) => {
+    res.render("clips",{
+        "clips" : Object.values(readDB()),
+        isAdmin : getSessionData(req.session, "isAdmin")
+    });
+ });
+
+
+adminGet("/api/list", (req, res) => {
+    res.json(readDB());
+ });
+adminGet("/api/start", (req, res) => {
+    startVote();
+    res.json({ message: "Voting started!" });
+});
+adminGet("/api/end", (req, res) => {
+    endVote();
+    res.json({ message: "Voting ended!" });
+});
+
 app.post("/api/vote", (req, res) => {
     if(!VoteOpen){
         req.flash("e", "The voting is not open!");
@@ -136,6 +170,17 @@ app.get("/destroy-session", (req, res) => {
         res.send("Session destroyed!");
     });
 });
+
+function adminGet(path : string, callback : (req : Request, res : Response) => void){
+    app.get(path, (req, res) => {
+        if(getSessionData(req.session, "isAdmin")){
+            callback(req, res);
+        }
+        else{
+            res.json({ message: "You are not admin!" }).status(403);
+        }
+     });
+}
 
 export function setSessionData<T = any>(session: session.Session, key: string, value: T) {
     (session as any)[key] = value;

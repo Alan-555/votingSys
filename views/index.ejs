@@ -30,10 +30,6 @@
         }
 
         .vote-button {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
         }
 
         .countdown {
@@ -90,7 +86,7 @@
                     function updateCountdown() {
                         let minutes = Math.floor(timeRemaining / 60);
                         let seconds = timeRemaining % 60;
-                        document.getElementById("countdown").textContent = `Time remaining: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                        document.getElementById("countdown").textContent = `Čas na toto hlasování: ${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
                         if (timeRemaining > -1) {
                             timeRemaining--;
@@ -111,6 +107,7 @@
                         }
                     });
                 </script>
+                <%- include('partials/admin') %>
 </body>
 
 </html>
