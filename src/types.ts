@@ -1,7 +1,8 @@
 export type VotingContext = {
     sessionId : string,
-    clips : File_[],
-    votes : number
+    clips : Clip[],
+    votes : number,
+    expiresAt : number
 }
 
 export type Data = {
@@ -10,10 +11,7 @@ export type Data = {
 
 export type Clip = {
     path : string,
-    hp : number
-}
-
-export type File_ ={
-    name : string,
-    path : string
+    hp : number,
+    displayName : string,
+    name : string
 }

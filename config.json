@@ -1,4 +1,6 @@
 {
-    "initHP": 10,
-    "maxRoundVote":10
+    "initHP": 5,
+    "maxHP": 7,
+    "voteTime": 90000,
+    "voteEnd" : 10
 }

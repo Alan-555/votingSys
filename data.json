@@ -1,18 +1,20 @@
 {
-  "test1": {
-    "hp": 10,
-    "path": "../public/files/test1"
+  "ada.mp3;1722522288,441.mp3": {
+    "name": "ada.mp3;1722522288,441.mp3",
+    "path": "../public/files/ada.mp3;1722522288,441.mp3",
+    "displayName": "ada",
+    "hp": 2
   },
-  "test2": {
-    "hp": 11,
-    "path": "../public/files/test2"
+  "ada_to_zkusila.mp3;1715465134,573.mp3": {
+    "name": "ada_to_zkusila.mp3;1715465134,573.mp3",
+    "path": "../public/files/ada_to_zkusila.mp3;1715465134,573.mp3",
+    "displayName": "ada to zkusila",
+    "hp": 0
   },
-  "test3": {
-    "hp": 10,
-    "path": "../public/files/test3"
-  },
-  "test4": {
-    "hp": 9,
-    "path": "../public/files/test4"
+  "Ah_retarded_jelly.mp3;1716719102,778.mp3": {
+    "name": "Ah_retarded_jelly.mp3;1716719102,778.mp3",
+    "path": "../public/files/Ah_retarded_jelly.mp3;1716719102,778.mp3",
+    "displayName": "ah retarded jelly",
+    "hp": 1
   }
 }
