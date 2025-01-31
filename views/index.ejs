@@ -65,7 +65,10 @@
                         </div>
                         <% }); %>
                 </div>
-
+                <% if(hardMode) { %>
+                <p  class="alert alert-warning text-center fw-bold"><%= hardMode %></p>
+                <% } %>
+                <br>
                 <button class="vote-button btn btn-lg btn-primary">Hlasovat!</button>
                 <button class="skip-button btn btn-lg btn-warning">SKIP</button>
                 <form id="voteForm" action="/api/vote" method="POST" style="display: none;">

@@ -3,5 +3,6 @@
     "maxHP": 7,
     "voteTime": 90000,
     "voteEnd" : 10,
-    "newSkipRewardAfterVotes" : 10
+    "newSkipRewardAfterVotes" : 10,
+    "totalClipCount" : 241
 }

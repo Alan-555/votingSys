@@ -4,12 +4,12 @@ import { fileURLToPath } from "url";
 import session, { Session } from "express-session";
 import secretConfig from "./../secret.json" with { type: "json" };
 import { VotingContext } from "./types.js";
-import { getRandomVoteMessage, isContextLegal, requestNewVote, vote } from "./backend.js";
+import { getHardModeMessage, getRandomVoteMessage, isContextLegal, requestNewVote, vote } from "./backend.js";
 import { changeClipHP, getRemaining } from "./dataBase.js";
 import { inspect } from "util";
 import flash from "express-flash";
 import { readDB } from "./jsonHelper.js";
-import appConfig, { endVote, startVote, VoteDone, VoteOpen } from "./app.js";
+import appConfig, { endVote, HardModeState, startVote, VoteDone, VoteOpen } from "./app.js";
 
 
 const app = express();
@@ -87,7 +87,8 @@ app.get("/", (req, res) => {
         time: ((clips.expiresAt - Date.now()) / 1000).toPrecision(2),
         messages: m,
         errorMessages : req.flash("e"),
-        isAdmin : getSessionData(req.session, "isAdmin")
+        isAdmin : getSessionData(req.session, "isAdmin"),
+        hardMode : getHardModeMessage()
     });
 
 });
