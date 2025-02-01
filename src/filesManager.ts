@@ -31,7 +31,7 @@ export function getFiles(): Clip[] {
         catch{
 
         }
-        fileDict.push({name: file,path: `../public/files/${file}` ,displayName:displayName,hp : appConfig.initHP-4});
+        fileDict.push({name: file,path: `../public/files/${file}` ,displayName:displayName,hp : appConfig.initHP});
     });
 
     return fileDict;
