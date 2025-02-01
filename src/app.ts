@@ -20,6 +20,7 @@ export function setHardMode(){
     let d = 4;
     HardModeState = Math.floor(d+1 - getRemaining()/(Math.round(appConfig.totalClipCount / d)));
     HardModeState = Math.min(3, HardModeState);
+    HardModeState = Math.max(1, HardModeState);
 }
 
 const rl = readline.createInterface({

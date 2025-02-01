@@ -21,13 +21,16 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 
+export const store = new session.MemoryStore();
+
 app.use(
 
     session({
         secret: secretConfig.sessionSecret, // Change this to a strong secret
         resave: false, // Avoid resaving unchanged sessions
         saveUninitialized: true, // Save new sessions
-        cookie: { secure: false } // Set `true` if using HTTPS
+        cookie: { secure: false }, // Set `true` if using HTTPS
+        store: store
     })
 );
 app.use(flash());
@@ -99,6 +102,15 @@ app.get("/login", (req, res) => {
     });
 });
 
+adminGet('/sessions', async (req, res) => {
+    try{
+        res.json(await getAllSessions());
+    }
+    catch(e){
+        res.json({error: e});
+    }
+  });
+
 // Define a simple API route
 app.get("/api", (req, res) => {
     res.json({ message: "Hello from API!" + JSON.stringify(getSessionData<VotingContext>(req.session, "votingContext")) });
@@ -155,7 +167,13 @@ app.post("/api/vote", (req, res) => {
         return;
     }
     try {
-        let newContext = vote(getVotingContext(req.session), req.body["clip"]);
+        let context = getVotingContext(req.session);
+        if (isContextLegal(context) ==2) {
+            req.flash("e", "Toto hlasování již vypršelo!");
+            res.redirect("/");
+            return;
+        }
+        let newContext = vote(context, req.body["clip"]);
         setVotingContext(req.session, newContext);
         if(getRemaining()<= appConfig.voteEnd){
             endVote();
@@ -183,6 +201,20 @@ app.get("/destroy-session", (req, res) => {
         res.send("Session destroyed!");
     });
 });
+
+export function getAllSessions(): Promise<session.SessionData[]> {
+    return new Promise((resolve, reject) => {
+        store.all((err, sessions) => {
+            if (err) {
+              reject(err);
+            }
+            else {
+              resolve(sessions as unknown as session.SessionData[]);
+            }
+          });
+    });
+}
+
 
 function adminGet(path : string, callback : (req : Request, res : Response) => void){
     app.get(path, (req, res) => {

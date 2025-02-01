@@ -1,5 +1,5 @@
 import { Express, Request, Response } from "express";
-import { getSessionData, getVotingContext, setVotingContext } from "./express.js";
+import { getAllSessions, getSessionData, getVotingContext, setVotingContext } from "./express.js";
 import { Clip, VotingContext } from "./types.js";
 import { changeClipHP, getRemaining, getTwoClips } from "./dataBase.js";
 import appConfig, { HardModeState, setHardMode } from "./app.js";

@@ -89,18 +89,6 @@
     "displayName": "armatura",
     "hp": 1
   },
-  "atThisPointIDoNotEvenFuckingKnow.mp3;1728336542,189.mp3": {
-    "name": "atThisPointIDoNotEvenFuckingKnow.mp3;1728336542,189.mp3",
-    "path": "../public/files/atThisPointIDoNotEvenFuckingKnow.mp3;1728336542,189.mp3",
-    "displayName": "at this point ido not even fucking know",
-    "hp": 1
-  },
-  "au.mp3;1715464308,392.mp3": {
-    "name": "au.mp3;1715464308,392.mp3",
-    "path": "../public/files/au.mp3;1715464308,392.mp3",
-    "displayName": "au",
-    "hp": 1
-  },
   "auschwitz.mp3;1728933478,843.mp3": {
     "name": "auschwitz.mp3;1728933478,843.mp3",
     "path": "../public/files/auschwitz.mp3;1728933478,843.mp3",
@@ -197,23 +185,17 @@
     "displayName": "craw",
     "hp": 1
   },
-  "ctrnactyho_prvni.mp3;1716719671,2.mp3": {
-    "name": "ctrnactyho_prvni.mp3;1716719671,2.mp3",
-    "path": "../public/files/ctrnactyho_prvni.mp3;1716719671,2.mp3",
-    "displayName": "ctrnactyho prvni",
-    "hp": 1
-  },
   "dal_jsem_si_quadru.mp3;1720991802,284.mp3": {
     "name": "dal_jsem_si_quadru.mp3;1720991802,284.mp3",
     "path": "../public/files/dal_jsem_si_quadru.mp3;1720991802,284.mp3",
     "displayName": "dal jsem si quadru",
-    "hp": 1
+    "hp": 2
   },
   "data.mp3;1715464505,356.mp3": {
     "name": "data.mp3;1715464505,356.mp3",
     "path": "../public/files/data.mp3;1715464505,356.mp3",
     "displayName": "data",
-    "hp": 1
+    "hp": 2
   },
   "dedekPrdi.mp3;1733174147,212.mp3": {
     "name": "dedekPrdi.mp3;1733174147,212.mp3",
@@ -323,12 +305,6 @@
     "displayName": "gay power",
     "hp": 1
   },
-  "Good_to_know_I_guess.mp3;1727001533,703.mp3": {
-    "name": "Good_to_know_I_guess.mp3;1727001533,703.mp3",
-    "path": "../public/files/Good_to_know_I_guess.mp3;1727001533,703.mp3",
-    "displayName": "good to know i guess",
-    "hp": 1
-  },
   "haha.mp3;1727813658,991.mp3": {
     "name": "haha.mp3;1727813658,991.mp3",
     "path": "../public/files/haha.mp3;1727813658,991.mp3",
@@ -339,7 +315,7 @@
     "name": "happens.mp3;1734283352,191.mp3",
     "path": "../public/files/happens.mp3;1734283352,191.mp3",
     "displayName": "happens",
-    "hp": 1
+    "hp": 2
   },
   "hateWhen.mp3;1724353438,578.mp3": {
     "name": "hateWhen.mp3;1724353438,578.mp3",
@@ -363,12 +339,6 @@
     "name": "HEHEHEHE.mp3;1715464735,176.mp3",
     "path": "../public/files/HEHEHEHE.mp3;1715464735,176.mp3",
     "displayName": "hehehehe",
-    "hp": 1
-  },
-  "hepffAAAAA.mp3;1715464523,212.mp3": {
-    "name": "hepffAAAAA.mp3;1715464523,212.mp3",
-    "path": "../public/files/hepffAAAAA.mp3;1715464523,212.mp3",
-    "displayName": "hepff aaaaa",
     "hp": 1
   },
   "heWhat.mp3;1717198299,289.mp3": {
@@ -561,7 +531,7 @@
     "name": "jezoch.mp3;1733174147,212.mp3",
     "path": "../public/files/jezoch.mp3;1733174147,212.mp3",
     "displayName": "jezoch",
-    "hp": 1
+    "hp": 2
   },
   "JFK_Alan.mp3;1715464727,818.mp3": {
     "name": "JFK_Alan.mp3;1715464727,818.mp3",
@@ -609,12 +579,6 @@
     "name": "kolik_je_24.mp3;1731684155,042.mp3",
     "path": "../public/files/kolik_je_24.mp3;1731684155,042.mp3",
     "displayName": "kolik je 24",
-    "hp": 1
-  },
-  "kone1.mp3;1737418921,956.mp3": {
-    "name": "kone1.mp3;1737418921,956.mp3",
-    "path": "../public/files/kone1.mp3;1737418921,956.mp3",
-    "displayName": "kone1",
     "hp": 1
   },
   "kone2.mp3;1737418925,511.mp3": {
@@ -675,7 +639,7 @@
     "name": "lobotomie.mp3;1723067294,589.mp3",
     "path": "../public/files/lobotomie.mp3;1723067294,589.mp3",
     "displayName": "lobotomie",
-    "hp": 1
+    "hp": 2
   },
   "manzelka_s_perem.mp3;1722374485,319.mp3": {
     "name": "manzelka_s_perem.mp3;1722374485,319.mp3",
@@ -753,7 +717,7 @@
     "name": "Now_we_wait.mp3;1722377493,688.mp3",
     "path": "../public/files/Now_we_wait.mp3;1722377493,688.mp3",
     "displayName": "now we wait",
-    "hp": 1
+    "hp": 0
   },
   "No_shit.mp3;1738117295,102.mp3": {
     "name": "No_shit.mp3;1738117295,102.mp3",
@@ -777,7 +741,7 @@
     "name": "OH_no_I_need.mp3;1715464647,207.mp3",
     "path": "../public/files/OH_no_I_need.mp3;1715464647,207.mp3",
     "displayName": "oh no i need",
-    "hp": 1
+    "hp": 2
   },
   "ok.mp3;1737585790,182.mp3": {
     "name": "ok.mp3;1737585790,182.mp3",
@@ -903,13 +867,13 @@
     "name": "prava.mp3;1722701207,056.mp3",
     "path": "../public/files/prava.mp3;1722701207,056.mp3",
     "displayName": "prava",
-    "hp": 1
+    "hp": 2
   },
   "prdelMuTrhalDemon.mp3;1733174147,212.mp3": {
     "name": "prdelMuTrhalDemon.mp3;1733174147,212.mp3",
     "path": "../public/files/prdelMuTrhalDemon.mp3;1733174147,212.mp3",
     "displayName": "prdel mu trhal demon",
-    "hp": 1
+    "hp": 2
   },
   "pribnacek.mp3;1737575956,745.mp3": {
     "name": "pribnacek.mp3;1737575956,745.mp3",
@@ -927,7 +891,7 @@
     "name": "prumernaVymenaNazoruTady.mp3;1724353438,578.mp3",
     "path": "../public/files/prumernaVymenaNazoruTady.mp3;1724353438,578.mp3",
     "displayName": "prumerna vymena nazoru tady",
-    "hp": 1
+    "hp": 2
   },
   "prumernaVymenaNazoruTadySequel.mp3;1724353438,578.mp3": {
     "name": "prumernaVymenaNazoruTadySequel.mp3;1724353438,578.mp3",
@@ -945,7 +909,7 @@
     "name": "rasismus.mp3;1722376912,37.mp3",
     "path": "../public/files/rasismus.mp3;1722376912,37.mp3",
     "displayName": "rasismus",
-    "hp": 1
+    "hp": 2
   },
   "ratio.mp3;1715293587,954.mp3": {
     "name": "ratio.mp3;1715293587,954.mp3",
@@ -1067,12 +1031,6 @@
     "displayName": "thats not how it works",
     "hp": 1
   },
-  "This_is_not_a_good_idea.mp3;1715464725,625.mp3": {
-    "name": "This_is_not_a_good_idea.mp3;1715464725,625.mp3",
-    "path": "../public/files/This_is_not_a_good_idea.mp3;1715464725,625.mp3",
-    "displayName": "this is not a good idea",
-    "hp": 1
-  },
   "tomakovo_nemesis.mp3;1737418937,07.mp3": {
     "name": "tomakovo_nemesis.mp3;1737418937,07.mp3",
     "path": "../public/files/tomakovo_nemesis.mp3;1737418937,07.mp3",
@@ -1101,7 +1059,7 @@
     "name": "Tomiho_rada.mp3;1735096397,542.mp3",
     "path": "../public/files/Tomiho_rada.mp3;1735096397,542.mp3",
     "displayName": "tomiho rada",
-    "hp": 1
+    "hp": 3
   },
   "Tomi_aha.mp3;1737664514,566.mp3": {
     "name": "Tomi_aha.mp3;1737664514,566.mp3",
@@ -1263,7 +1221,7 @@
     "name": "velryba.mp3;1733174147,212.mp3",
     "path": "../public/files/velryba.mp3;1733174147,212.mp3",
     "displayName": "velryba",
-    "hp": 1
+    "hp": 2
   },
   "vino.mp4;1729984071,034.mp3": {
     "name": "vino.mp4;1729984071,034.mp3",
@@ -1313,18 +1271,6 @@
     "displayName": "vojta meltdown",
     "hp": 1
   },
-  "vojtaMoudro.mp3;1715464343,179.mp3": {
-    "name": "vojtaMoudro.mp3;1715464343,179.mp3",
-    "path": "../public/files/vojtaMoudro.mp3;1715464343,179.mp3",
-    "displayName": "vojta moudro",
-    "hp": 1
-  },
-  "vojtaprdel.mp3;1737418941,02.mp3": {
-    "name": "vojtaprdel.mp3;1737418941,02.mp3",
-    "path": "../public/files/vojtaprdel.mp3;1737418941,02.mp3",
-    "displayName": "vojtaprdel",
-    "hp": 1
-  },
   "vojta_a_pes.mp3;1715636421,288.mp3": {
     "name": "vojta_a_pes.mp3;1715636421,288.mp3",
     "path": "../public/files/vojta_a_pes.mp3;1715636421,288.mp3",
@@ -1341,7 +1287,7 @@
     "name": "Vojta_MOAN.mp3;1716901867,366.mp3",
     "path": "../public/files/Vojta_MOAN.mp3;1716901867,366.mp3",
     "displayName": "vojta moan",
-    "hp": 1
+    "hp": 2
   },
   "vojtechDecentniBlunder.mp3;1728661133,41.mp3": {
     "name": "vojtechDecentniBlunder.mp3;1728661133,41.mp3",
@@ -1431,12 +1377,6 @@
     "name": "Zajimavy_poznatek_od_mistra_Polaka.mp3;1731712720,23.mp3",
     "path": "../public/files/Zajimavy_poznatek_od_mistra_Polaka.mp3;1731712720,23.mp3",
     "displayName": "zajimavy poznatek od mistra polaka",
-    "hp": 1
-  },
-  "zid.mp3;1729983527,5.mp3": {
-    "name": "zid.mp3;1729983527,5.mp3",
-    "path": "../public/files/zid.mp3;1729983527,5.mp3",
-    "displayName": "zid",
     "hp": 1
   },
   "zoo.mp3;1717010205,104.mp3": {
