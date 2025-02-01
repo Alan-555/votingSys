@@ -152,6 +152,7 @@ app.post("/api/vote", (req, res) => {
     if(!VoteOpen){
         req.flash("e", "The voting is not open!");
         res.redirect("/");
+        return;
     }
     try {
         let newContext = vote(getVotingContext(req.session), req.body["clip"]);
