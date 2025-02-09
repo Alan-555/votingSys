@@ -64,7 +64,7 @@ app.get("/", (req, res) => {
         res.render("message", {
             messages : req.flash("m"),
             "title" : VoteDone ? "hlasování je ukonce" : "Zachvíli začneme hlasování!",
-            "message" : VoteDone ? "Bylo vybráno nejlepších "+appConfig.voteEnd : "(snad to bude fungovat lol)",
+            "message" : VoteDone ? "Bylo vybráno nejlepších "+appConfig.voteEnd : "Tak se připrav",
             errorMessages : req.flash("e"),
             isAdmin : getSessionData(req.session, "isAdmin")
         });
@@ -181,7 +181,7 @@ app.post("/api/vote", (req, res) => {
             res.redirect("/");
             return;
         }
-        req.flash("m", getRandomVoteMessage() + " Každopádně, tvůj hlas byl uložen. Snad.");
+        req.flash("m", getRandomVoteMessage() + " Každopádně, tvůj hlas byl uložen.");
         res.redirect("/");
 
     } catch (e) {

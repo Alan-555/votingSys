@@ -2,8 +2,10 @@ import { Express, Request, Response } from "express";
 import { getAllSessions, getSessionData, getVotingContext, setVotingContext } from "./express.js";
 import { Clip, VotingContext } from "./types.js";
 import { changeClipHP, getRemaining, getTwoClips } from "./dataBase.js";
-import appConfig, { HardModeState, setHardMode } from "./app.js";
+import appConfig, { HardModeState, overrideDamage, setHardMode } from "./app.js";
+import { Console } from "console";
 export function requestNewVote(req: Request): [Clip, Clip] {
+    console.log("Serving new vote for " + getSessionData<VotingContext>(req.session, "votingContext").sessionId);
     setHardMode();
     let context = getVotingContext(req.session);
     let clips = getTwoClips();
@@ -26,8 +28,15 @@ export function vote(context: VotingContext, clip: number): VotingContext {
     }
     context.votes += 1;
     let offset = HardModeState;
+    offset -= overrideDamage;
     changeClipHP(context.clips[clip].name, 1);
     changeClipHP(context.clips[clip == 0 ? 1 : 0].name, -offset);
+    try{
+        console.log("Vote for " + context.clips[clip].name + " clip now has HP " + context.clips[clip].hp+1 + " and " + context.clips[clip == 0 ? 1 : 0].name + " has " + (context.clips[clip == 0 ? 1 : 0].hp -offset));
+    }
+    catch(e){
+        console.log(e);	
+    }
     context.clips = [];
     return context;
 }

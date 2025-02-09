@@ -8,6 +8,7 @@ export default appConfig;
 export let VoteOpen = false;
 export let VoteDone = false;
 export let HardModeState = 1; //1 - normal, 2- double damage, 3- triple damage
+export let overrideDamage = 0;
 
 export function endVote(){
     VoteOpen = false;
@@ -42,14 +43,24 @@ function handleCommand(command: string) {
     switch (command.trim()) {
         case "voteStart" :
             VoteOpen = true;
+            console.log("Voting started!");
             break;
         case "voteEnd":
             VoteOpen = false;
+            console.log("Voting ended!");
         break;
         case "initDB":
             initDB();
+            console.log("Database initialized.");
             break;
+            
         default:
+            if(command.startsWith("overrideDamage")){
+                let args = command.split(" ");
+                overrideDamage = parseInt(args[1]);
+                console.log("Set damage override to " + overrideDamage);
+                break;
+            }
             console.log("❌ Unknown command.");
     }
 }

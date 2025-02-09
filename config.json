@@ -1,7 +1,7 @@
 {
     "initHP": 5,
     "maxHP": 7,
-    "voteTime": 9000,
+    "voteTime": 120000,
     "voteEnd" : 10,
     "newSkipRewardAfterVotes" : 10,
     "totalClipCount" : 241
